@@ -1,1 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANG DJ | Premium Event Production</title>
+    
+    <!-- Google Fonts for Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- LUXURY MINIMALIST VARIABLES --- */
+        :root {
+            --bg-color: #050505;
+            --surface-color: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #999999;
+            --accent-gold: #c5a059;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-padding {
+            padding: 120px 0;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .lead-text {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.4s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-gold);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Radial gradient acts as a placeholder for a dark, moody background image */
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        /* --- BUTTONS & LINKS --- */
+        .cta-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+        }
+
+        .btn-text {
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+        }
+
+        .btn-text:hover {
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--text-primary);
+        }
+
+        .link-arrow {
+            display: inline-block;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+
+        .link-arrow:hover {
+            transform: translateX(10px);
+        }
+
+        /* --- STATS GRID --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 60px 0;
+        }
+
+        .stat-box h3 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+        }
+
+        .stat-box p {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- SERVICES GRID --- */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px 40px;
+        }
+
+        .service-item {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item span {
+            display: block;
+            font-family: var(--font-heading);
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            color: var(--text-secondary);
+        }
+
+        /* --- CONTACT CTA --- */
+        .contact-cta {
+            background-color: var(--surface-color);
+            text-align: center;
+        }
+
+        .contact-cta h2 { margin-bottom: 20px; }
+        .contact-cta p { margin-bottom: 40px; color: var(--text-secondary); }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- ANIMATION CLASSES --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar fade-in">
+        <div class="logo">KANG DJ.</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Equipment</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <p class="subtitle">Jalandhar & The Punjab Region</p>
+            <h1>Elevating<br>Live Experiences.</h1>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Request a Quote</a>
+                <a href="#" class="btn btn-text">WhatsApp Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- QUICK STATISTICS -->
+    <section class="stats-section section-padding">
+        <div class="container stats-grid fade-in">
+            <div class="stat-box">
+                <h3>500+</h3>
+                <p>Curated Events</p>
+            </div>
+            <div class="stat-box">
+                <h3>10+</h3>
+                <p>Years of Mastery</p>
+            </div>
+            <div class="stat-box">
+                <h3>50+</h3>
+                <p>Cities Served</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="about-preview section-padding">
+        <div class="container fade-in">
+            <h2 class="section-title">The Standard in Sound & Light</h2>
+            <p class="lead-text">We provide the technical foundation for unforgettable moments. From high-fidelity line arrays to seamless LED video walls powered by premium Linsn and VDWall processors, our family-run firm delivers uncompromising quality.</p>
+            <a href="#" class="link-arrow">Discover Our Story &#8594;</a>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="services-overview section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Expertise</h2>
+            <div class="service-grid">
+                <div class="service-item fade-in">
+                    <span>01</span>
+                    <h3>Sound Systems</h3>
+                    <p>Crystal clear audio arrays engineered for crowds of any size.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <span>02</span>
+                    <h3>Lighting Design</h3>
+                    <p>Dynamic moving heads, washes, and architectural ambient lighting.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <span>03</span>
+                    <h3>DJ Services</h3>
+                    <p>Seamless mixing for weddings, corporate galas, and private events.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <span>04</span>
+                    <h3>LED Visuals</h3>
+                    <p>High-resolution screens and flawless frame-rate visual playback.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <span>05</span>
+                    <h3>Stage Production</h3>
+                    <p>Structural event design, custom staging, and heavy-duty trussing.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <span>06</span>
+                    <h3>Event Management</h3>
+                    <p>End-to-end technical coordination ensuring flawless execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta section-padding">
+        <div class="container fade-in">
+            <h2>Let's Discuss Your Event.</h2>
+            <p>Get a bespoke technical setup tailored to your venue and vision.</p>
+            <a href="#" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="fade-in">
+        <div class="container">
+            <p>&copy; 2026 KANG DJ Production. Jalandhar, Punjab.</p>
+        </div>
+    </footer>
+
+    <!-- INTERSECTION OBSERVER SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('appear');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        });
+    </script>
+</body>
+</html>
