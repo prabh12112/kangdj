@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
     <meta name="description" content="KANG DJ — Premium event production, sound systems, lighting design, and DJ services across Jalandhar & Punjab.">
     <title>KANG DJ | Premium Event Production</title>
 
@@ -860,6 +861,84 @@
             .hero-label { margin-bottom: 16px; }
             .hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
             .hero-desc { margin-bottom: 1.5rem; }
+        }
+
+        /* SYSTEM THEME — respects the device or browser appearance setting */
+        html { color-scheme: dark; }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                color-scheme: light;
+                --bg-color: #f7f6fb;
+                --surface-color: #ffffff;
+                --surface-2: #efedf6;
+                --text-primary: #211e2d;
+                --text-secondary: #5e596b;
+                --text-muted: #7e788a;
+                --accent-gold: #6941c6;
+                --accent-gold-light: #8a6fe0;
+                --accent-gold-dark: #4d2c9e;
+                --accent-violet: #7054ce;
+                --accent-cyan: #5942a5;
+                --border-subtle: rgba(38, 31, 59, 0.11);
+                --border-light: rgba(38, 31, 59, 0.18);
+                --glass-surface: rgba(255, 255, 255, 0.76);
+                --glass-highlight: rgba(255, 255, 255, 0.8);
+            }
+
+            body::after { opacity: 0.018; }
+            .navbar { background: linear-gradient(180deg, rgba(247,246,251,0.82), rgba(247,246,251,0)); }
+            .navbar.scrolled { background: rgba(250,249,253,0.86); border-bottom-color: rgba(38,31,59,0.12); box-shadow: 0 12px 36px rgba(45,35,74,0.10); }
+
+            .hamburger { background: rgba(255,255,255,0.66); border-color: rgba(38,31,59,0.14); }
+            .hamburger:hover, .hamburger.active { background: rgba(105,65,198,0.10); border-color: rgba(105,65,198,0.35); }
+            .mobile-menu { background: rgba(40,31,65,0.28); }
+            .mobile-menu::before { background: radial-gradient(circle at 90% 18%, rgba(105,65,198,0.16), transparent 34%); }
+            .mobile-menu__panel {
+                background: linear-gradient(145deg, rgba(255,255,255,0.99), rgba(246,243,255,0.99) 64%), var(--surface-color);
+                border-left-color: rgba(38,31,59,0.12); box-shadow: -28px 0 80px rgba(45,35,74,0.16);
+            }
+            .mobile-menu__cta { border-color: rgba(105,65,198,0.48); }
+            .mobile-menu__cta:hover { background: var(--accent-gold); color: #fff; }
+
+            .hero {
+                background:
+                    radial-gradient(ellipse 70% 60% at 50% 28%, rgba(126,91,218,0.18), transparent 64%),
+                    radial-gradient(ellipse 48% 42% at 77% 74%, rgba(178,151,245,0.20), transparent 66%),
+                    linear-gradient(125deg, #f8f6ff 0%, #eeeafd 52%, #faf9fd 100%);
+            }
+            .hero::before { background: radial-gradient(circle, rgba(137,102,228,0.15) 0%, rgba(137,102,228,0.07) 34%, transparent 69%); }
+            .hero::after { border-color: rgba(105,65,198,0.22); box-shadow: 0 0 0 4rem rgba(105,65,198,0.025), 0 0 8rem rgba(105,65,198,0.12); }
+            .hero-grid-lines {
+                background-image: linear-gradient(rgba(38,31,59,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(38,31,59,0.04) 1px, transparent 1px);
+            }
+            .hero-content { border-color: rgba(38,31,59,0.12); background: linear-gradient(135deg, rgba(255,255,255,0.84), rgba(246,243,255,0.62)); box-shadow: 0 28px 90px rgba(54,40,91,0.14), inset 0 1px 0 var(--glass-highlight); }
+            .hero-label { border-color: rgba(105,65,198,0.32); background: rgba(105,65,198,0.07); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7); }
+            .hero h1 { text-shadow: 0 4px 32px rgba(54,40,91,0.10); }
+            .hero-desc { color: var(--text-secondary); }
+
+            .btn-primary { color: #fff; box-shadow: 0 10px 30px rgba(105,65,198,0.22); }
+            .btn-primary:hover { box-shadow: 0 16px 38px rgba(105,65,198,0.30); }
+            .btn-outline { background: rgba(255,255,255,0.66); }
+            .nav-cta:hover { color: #fff !important; }
+
+            .stats-grid { background: rgba(255,255,255,0.88); box-shadow: 0 22px 60px rgba(45,35,74,0.12); }
+            .stat-box:hover { background: linear-gradient(135deg, rgba(105,65,198,0.13), rgba(178,151,245,0.10)); }
+            .about-image, .gallery-item { border-color: rgba(38,31,59,0.12); box-shadow: 0 20px 55px rgba(45,35,74,0.12); }
+            .about-image::after { border-color: rgba(38,31,59,0.12); }
+            .about-badge { background: rgba(255,255,255,0.82); border-color: rgba(38,31,59,0.14); box-shadow: 0 12px 28px rgba(45,35,74,0.12); }
+
+            .services-section { background: linear-gradient(180deg, var(--surface-color), #f0eef8); }
+            .service-item { background: linear-gradient(145deg, rgba(255,255,255,0.92), rgba(244,241,252,0.86)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9); }
+            .service-item:hover { border-color: rgba(105,65,198,0.36); background: linear-gradient(145deg, rgba(105,65,198,0.12), rgba(178,151,245,0.10)); box-shadow: 0 18px 42px rgba(45,35,74,0.12), inset 0 1px 0 rgba(255,255,255,0.8); }
+            .equipment-section { background: rgba(80,60,130,0.035); }
+            .testimonial-section { background: radial-gradient(ellipse at center, rgba(105,65,198,0.10), transparent 58%), var(--surface-color); }
+            .testimonial-content { background: rgba(255,255,255,0.84); box-shadow: 0 24px 70px rgba(45,35,74,0.12); }
+            .contact-info-item:hover { background: rgba(105,65,198,0.06); }
+            .contact-info-icon { border-color: rgba(105,65,198,0.24); background: rgba(105,65,198,0.08); }
+            .contact-form { background: rgba(255,255,255,0.9); box-shadow: 0 24px 60px rgba(45,35,74,0.12); }
+            .form-group input, .form-group textarea, .form-group select { background-color: rgba(255,255,255,0.84); }
+            .footer { background: linear-gradient(180deg, transparent, rgba(105,65,198,0.055)); }
         }
     </style>
 </head>
